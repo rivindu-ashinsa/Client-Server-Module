@@ -19,8 +19,12 @@ public class Tutorial1 {
         Receiver receiver = new Receiver();
         
         Message message = sender.createMessage(new Message("Thi s is my message"));
+        try {
         sender.sendMessage(receiver, message);
-        logger.log(Level.SEVERE,"Message sent");
+        } catch (Exception e){
+            logger.log(Level.SEVERE, "Failed to send message " + e);
+        }
+        logger.log(Level.INFO,"Message sent");
         
     }
 }
