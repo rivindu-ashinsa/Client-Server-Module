@@ -17,11 +17,9 @@ public class Sender {
     public Message createMessage(Message message){
         Message message1 = new Message("This is the message");
         logger.log(Level.INFO, "Message Craeted " + message.getContent());
-        System.out.println("Message Created " + message.getContent());
         return message1; 
     }
     public void sendMessage(Receiver receiver, Message message){
-        System.out.println("Message Sending");
         logger.log(Level.INFO, "Message Sending " + message.getContent());
         receiver.receiveMessage(message);
     }

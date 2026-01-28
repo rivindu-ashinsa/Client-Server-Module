@@ -8,11 +8,17 @@
  * @author User
  */
 
-
 package com.mycompany.tutorial1;
 
+
+
+import java.util.logging.Logger; 
+import java.util.logging.Level;
+
+
 public class Receiver {
+    private static final Logger logger = Logger.getLogger(Receiver.class.getName());
     public void receiveMessage(Message message){
-        System.out.println("Message received " + message.getContent());
+        logger.log(Level.INFO, "Message received ", message.getContent());
     }
 }
